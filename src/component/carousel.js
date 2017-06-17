@@ -1,4 +1,4 @@
-//dev分支
+//dev分支2
 import React, { Component } from 'react';
 import '../css/carousel.css';
 const Image_DATA = [
