@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  HashRouter
+} from 'react-router-dom';
 import logo from './logo.svg';
 // import './App.css';
-import Practice from './component/practice.js';
-import Toggle from './component/toggle.js';
-import List from './component/list.js';
-import NameForm from './component/nameForm.js'
-import SignUpDialog from './component/signUp.js';
-import Calculator from './component/boiling.js';
-import FilterableProductTable from './component/product.js';
+import Practice from './component/practice';
+import Toggle from './component/toggle';
+import List from './component/list';
+import NameForm from './component/nameForm'
+import SignUpDialog from './component/signUp';
+import Calculator from './component/boiling';
+import FilterableProductTable from './component/product2';
+import Header from './component/header';
+import Carousel from './component/carousel';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        {/*<div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <HashRouter namebase="/build">
+        <div className="app">
+          <Header />
+          <div className="content">
+            <Route exact path="/home" component={FilterableProductTable}></Route>
+            <Route exact path="/carousel" component={Carousel}></Route>
+          </div>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>*/}
-        <FilterableProductTable />
-      </div>
+      </HashRouter>
     );
   }
 }
